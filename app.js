@@ -8,6 +8,8 @@ require("./configs/middleware.config")(app);
 require("./configs/db.config");
 
 const projectRoutes = require("./routes/project.routes");
-app.use("/projects", projectRoutes);
+const taskRoutes = require("./routes/task.routes");
+app.use("/", projectRoutes);
+app.use("/task", taskRoutes);
 
 app.listen(4000, () => console.log("server running"));

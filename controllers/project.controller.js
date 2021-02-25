@@ -3,7 +3,7 @@ const Project = require("../models/Project.model");
 exports.getProjects = async (req, res) => {
   try {
     const projects = await Project.find();
-    res.status(200).json({ data: projects });
+    res.status(200).json({ projects });
   } catch (e) {
     res.status(400);
   }
@@ -13,7 +13,7 @@ exports.getProject = async (req, res) => {
   try {
     const { projectId } = req.params;
     const project = await Project.findById(projectId);
-    res.status(200).json({ data: project });
+    res.status(200).json({ project });
   } catch (e) {
     res.status(400);
   }
@@ -27,7 +27,7 @@ exports.updateProject = async (req, res) => {
       req.body,
       { new: true }
     );
-    res.status(200).json({ data: updatedProject });
+    res.status(200).json({ updatedProject });
   } catch (e) {
     res.status(400);
   }
@@ -36,7 +36,7 @@ exports.updateProject = async (req, res) => {
 exports.createProject = async (req, res) => {
   try {
     const newProject = await Project.create(req.body);
-    res.status(200).json({ data: newProject });
+    res.status(200).json({ newProject });
   } catch (e) {
     res.status(400);
   }

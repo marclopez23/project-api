@@ -10,9 +10,9 @@ const {
 
 route
   .get("/", getProjects)
-  .get("/:projectId", getProject)
-  .patch("/:projectId", updateProject)
+  .get("/project/:projectId", getProject)
+  .patch("/project/:projectId", updateProject)
   .post("/", createProject)
-  .delete("/:projectId", removeProject);
+  .delete("/project/:projectId", removeProject);
 
 module.exports = route;
