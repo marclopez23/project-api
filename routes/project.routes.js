@@ -12,7 +12,7 @@ route
   .get("/", getProjects)
   .get("/project/:projectId", getProject)
   .patch("/project/:projectId", updateProject)
-  .post("/", createProject)
+  .post("/new-project", createProject)
   .delete("/project/:projectId", removeProject);
 
 module.exports = route;
